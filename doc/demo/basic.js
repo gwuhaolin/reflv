@@ -6,9 +6,7 @@ export class Basic extends PureComponent {
 
   render() {
     return (
-      <div>
-        <Reflv url={demo} type="flv"/>
-      </div>
+      <Reflv url={demo} type="flv"/>
     )
   }
 }

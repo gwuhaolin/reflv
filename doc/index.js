@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import ReDemo from 'redemo';
 import { Basic } from './demo/basic';
+import { Live } from './demo/live';
 import { FlvSupport } from './support';
 import './index.scss';
 
@@ -13,19 +14,24 @@ const ROOT = (
     <h1>Reflv: react component wrap flv.js</h1>
     <div>
       <h3>Demos</h3>
+
       <ReDemo
         docgen={docgen}
         code={require('!!raw-loader!./demo/basic')}
         doc={`
-### react component used to demonstrate react component
-#### structure
-- in top section is demo instance to play
-- circle button in right are toggle for **component propTypes** and **demo source code**
-- propTypes table show all prop's info for this component
-- in bottom is source code for this demo
+play same origin record video
 `}
       >
         <Basic/>
+      </ReDemo>
+
+      <ReDemo
+        code={require('!!raw-loader!./demo/live')}
+        doc={`
+play cross origin live stream video
+`}
+      >
+        <Live/>
       </ReDemo>
     </div>
     <FlvSupport/>

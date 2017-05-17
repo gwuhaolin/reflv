@@ -18,15 +18,29 @@ export class Reflv extends Component {
      * Indicates media type, 'flv' or 'mp4'
      */
     type: PropTypes.oneOf(['flv', 'mp4']).isRequired,
+    /**
+     * Indicates whether the data source is a **live stream**
+     */
+    isLive: PropTypes.bool,
+    /**
+     * Indicates whether to enable CORS for http fetching
+     */
+    cors: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    isLive: false,
+    cors: false,
   }
 
   initFlv = ($video) => {
-    const { url, type } = this.props;
+    const { url, type, isLive, cors } = this.props;
     if (flvjs.isSupported()) {
       let flvPlayer = flvjs.createPlayer({
-        type: type,
-        isLive: true,
+        type,
+        isLive,
         url,
+        cors,
       });
       flvPlayer.attachMediaElement($video);
       flvPlayer.load();
