@@ -1,0 +1,40 @@
+{
+  "name": "play-flv",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "webpack-dev-server --open"
+  },
+  "dependencies": {
+    "flv.js": "^1.2.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "doc:pub": "rm -rf .doc && NODE_ENV=production webpack --config webpack-dist.config.js",
+    "npm:js": "babel src/ --out-dir npm/ --source-maps",
+    "npm:pub": "rm -rf npm && npm run npm:js && cp ./package.json npm/ && npm publish npm/"
+  },
+  "devDependencies": {
+    "antd": "^2.10.1",
+    "babel-core": "6.24.1",
+    "babel-loader": "7.0.0",
+    "babel-plugin-import": "^1.1.1",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
+    "css-loader": "0.28.1",
+    "docgen-loader": "^1.3.4",
+    "end-webpack-plugin": "^1.0.0",
+    "file-loader": "0.11.1",
+    "gh-pages": "^1.0.0",
+    "node-sass": "4.5.3",
+    "raw-loader": "^0.5.1",
+    "react-docgen": "^2.15.0",
+    "react-dom": "^15.5.4",
+    "redemo": "^1.0.2",
+    "sass-loader": "6.0.5",
+    "style-loader": "0.17.0",
+    "web-webpack-plugin": "1.5.8",
+    "webpack": "2.5.1",
+    "webpack-dev-server": "2.4.5"
+  }
+}
