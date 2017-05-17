@@ -44,7 +44,7 @@ module.exports = {
     ]
   },
   entry: {
-    doc: './src/doc/index.js',
+    doc: './doc/index.js',
   },
   plugins: [
     new DefinePlugin({

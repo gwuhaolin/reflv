@@ -1,16 +1,16 @@
 {
   "name": "play-flv",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
-    "dev": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "doc:pub": "rm -rf .doc && NODE_ENV=production webpack --config webpack-dist.config.js",
+    "npm:js": "babel src/ --out-dir .npm/ --source-maps",
+    "npm:pub": "rm -rf .npm && npm run npm:js && cp ./package.json .npm/ && npm publish .npm/"
   },
   "dependencies": {
     "flv.js": "^1.2.0",
     "prop-types": "^15.5.10",
-    "react": "^15.5.4",
-    "doc:pub": "rm -rf .doc && NODE_ENV=production webpack --config webpack-dist.config.js",
-    "npm:js": "babel src/ --out-dir npm/ --source-maps",
-    "npm:pub": "rm -rf npm && npm run npm:js && cp ./package.json npm/ && npm publish npm/"
+    "react": "^15.5.4"
   },
   "devDependencies": {
     "antd": "^2.10.1",
