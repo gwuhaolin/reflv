@@ -22,7 +22,8 @@ export class FlvSupport extends PureComponent {
       dataIndex: 'support',
       key: 'support',
       render: (text) => {
-        if (typeof text === 'boolean') {
+        //noinspection EqualityComparisonWithCoercionJS
+        if (typeof text === 'boolean' || text == null) {
           return text ? <Tag color="green">true</Tag> : <Tag color="red">false</Tag>;
         }
         return text;

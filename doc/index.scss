@@ -1,3 +1,7 @@
+#react-body {
+  margin: 10px;
+}
+
 .reflv-wrap {
   margin: 0 auto;
   max-width: 1000px;
@@ -9,5 +13,11 @@
   .redemo {
     width: 100%;
     margin: 10px 0;
+  }
+
+  .ant-table {
+    td {
+      word-break: normal;
+    }
   }
 }
