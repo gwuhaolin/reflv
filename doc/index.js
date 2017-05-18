@@ -11,7 +11,7 @@ const docgen = require('!!docgen-loader!../src');
 
 const ROOT = (
   <div className="reflv-wrap">
-    <h1>Reflv: react component wrap flv.js</h1>
+    <h1>react component wrap flv.js</h1>
     <div>
       <h3>Demos</h3>
 
