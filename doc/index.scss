@@ -16,8 +16,13 @@
   }
 
   .ant-table {
+
     td {
       word-break: normal;
+    }
+
+    .ant-table-content{
+      overflow-x: scroll;
     }
   }
 }

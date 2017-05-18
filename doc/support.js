@@ -38,19 +38,19 @@ export class FlvSupport extends PureComponent {
         key: 'mseFlvPlayback',
         name: 'mseFlvPlayback',
         support: mseFlvPlayback,
-        description: 'Same to flvjs.isSupported(), indicates whether basic playback works on your browser.'
+        description: 'Same to flvjs.isSupported(), whether basic playback works on your browser.'
       },
       {
         key: 'mseLiveFlvPlayback',
         name: 'mseLiveFlvPlayback',
         support: mseLiveFlvPlayback,
-        description: 'Indicates whether HTTP FLV live stream can works on your browser.'
+        description: 'Whether HTTP FLV live stream can works on your browser.'
       },
       {
         key: 'networkStreamIO',
         name: 'networkStreamIO',
         support: networkStreamIO,
-        description: 'Indicates whether the network loader is streaming.'
+        description: 'Whether the network loader is streaming.'
       },
       {
         key: 'networkLoaderName',
@@ -62,19 +62,19 @@ export class FlvSupport extends PureComponent {
         key: 'nativeMP4H264Playback',
         name: 'nativeMP4H264Playback',
         support: nativeMP4H264Playback,
-        description: 'Indicates whether your browser support H.264 MP4 video file natively.'
+        description: 'Whether your browser support H.264 MP4 video file natively.'
       },
       {
         key: 'nativeWebmVP8Playback',
         name: 'nativeWebmVP8Playback',
         support: nativeWebmVP8Playback,
-        description: 'Indicates whether your browser support WebM VP8 video file natively.'
+        description: 'Whether your browser support WebM VP8 video file natively.'
       },
       {
         key: 'nativeWebmVP9Playback',
         name: 'nativeWebmVP9Playback',
         support: nativeWebmVP9Playback,
-        description: 'Indicates whether your browser support WebM VP9 video file natively.'
+        description: 'Whether your browser support WebM VP9 video file natively.'
       },
     ];
     return (
