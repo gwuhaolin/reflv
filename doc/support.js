@@ -79,7 +79,7 @@ export class FlvSupport extends PureComponent {
     ];
     return (
       <div style={{ paddingBottom: '20px' }}>
-        <h3>Support flv.js feature list for your browser</h3>
+        <h3>Supported flv.js feature list for your browser</h3>
         <Table size="small" pagination={false} dataSource={dataSource} columns={columns}/>
       </div>
     );
