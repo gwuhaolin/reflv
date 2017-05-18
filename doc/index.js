@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import ReDemo from 'redemo';
 import { Basic } from './demo/basic';
 import { Live } from './demo/live';
+import { HLS } from './demo/hls';
 import { FlvSupport } from './support';
 import './index.scss';
 
@@ -19,7 +20,7 @@ const ROOT = (
         docgen={docgen}
         code={require('!!raw-loader!./demo/basic')}
         doc={`
-play same origin record video
+same origin record video
 `}
       >
         <Basic/>
@@ -28,10 +29,18 @@ play same origin record video
       <ReDemo
         code={require('!!raw-loader!./demo/live')}
         doc={`
-play cross origin live stream video
+cross origin live stream video
 `}
       >
         <Live/>
+      </ReDemo>
+      <ReDemo
+        code={require('!!raw-loader!./demo/hls')}
+        doc={`
+HLS live video
+`}
+      >
+        <HLS/>
       </ReDemo>
     </div>
     <FlvSupport/>
