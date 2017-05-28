@@ -38,7 +38,7 @@ module.exports = {
         loaders: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(gif|png|jpe?g|eot|woff|ttf|svg|pdf|flv)$/,
+        test: /\.(gif|png|jpe?g|eot|woff|ttf|svg|pdf|flv|swf)$/,
         loader: 'file-loader',
       },
     ]

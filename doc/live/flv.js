@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import { Reflv } from '../../src/index';
 
-export class Live extends PureComponent {
+export class FLV extends PureComponent {
 
   render() {
     return (
       <Reflv
-        url="https://2000.liveplay.myqcloud.com/live/2000_feceb63d176711e6b91fa4dcbef5e35a.flv"
+        url="http://127.0.0.1:8081/live/movie.flv"
         type="flv"
         isLive
         cors

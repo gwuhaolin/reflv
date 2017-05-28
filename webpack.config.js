@@ -34,20 +34,26 @@ module.exports = {
         loaders: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(gif|png|jpe?g|eot|woff|ttf|svg|pdf|flv)$/,
+        test: /\.(gif|png|jpe?g|eot|woff|ttf|svg|pdf|flv|swf)$/,
         loader: 'file-loader',
       },
     ]
   },
   entry: {
     doc: './doc/index',
+    live: './doc/live/index',
   },
   plugins: [
     new WebPlugin({
       template: './doc/template.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      requires: ['doc'],
     }),
-
+    new WebPlugin({
+      template: './doc/template.html',
+      filename: 'live.html',
+      requires: ['live'],
+    }),
   ],
   devtool: 'source-map',
 };
