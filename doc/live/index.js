@@ -7,6 +7,9 @@ import { RTMP } from './rtmp';
 import { FlvSupport } from '../support';
 import '../index.scss';
 
+// export const HOST = 'wuhaolin.cn';
+export const HOST = 'localhost';
+
 const ROOT = (
   <div className="reflv-wrap">
     <h1>常见直播方案对比</h1>

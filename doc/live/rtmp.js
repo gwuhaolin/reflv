@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react';
 import swfobject from 'swfobject';
 import player from './player.swf';
+import { HOST } from './index';
 
 export class RTMP extends PureComponent {
 
   componentDidMount() {
     const soFlashVars = {
-      src: 'rtmp://localhost/live/movie',
+      src: `rtmp://${HOST}:1935/live/movie`,
       streamType: 'live',
       autoPlay: "true",
       controlBarAutoHide: "true",
