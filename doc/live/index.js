@@ -9,7 +9,7 @@ import '../index.scss';
 
 const ROOT = (
   <div className="reflv-wrap">
-    <h1>直播方案对比</h1>
+    <h1>常见直播方案对比</h1>
     <div>
 
       <ReDemo doc="RTMP">
