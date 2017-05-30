@@ -45,10 +45,10 @@ class ROOT extends PureComponent {
               window.location.reload();
             })
           }}/>
-          <p>使用<code>{`ffmpeg -re -i demo.flv -c copy -f flv rtmp://wuhaolin.cn/live/${id}`}</code>推流播放demo.flv</p>
+          <p>使用<code>{`ffmpeg -re -i demo.flv -c copy -f flv rtmp://${HOST}/live/${id}`}</code>推流播放demo.flv</p>
           <p>使用
             <code>
-              {`ffmpeg -f avfoundation -i "0" -vcodec h264 -acodec aac -f flv rtmp://wuhaolin.cn/live/${id}`}
+              {`ffmpeg -f avfoundation -i "0" -vcodec h264 -acodec aac -f flv rtmp://${HOST}/live/${id}`}
             </code>
             推流播放你电脑的摄像头
           </p>

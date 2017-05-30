@@ -31,7 +31,7 @@ export class RTMP extends PureComponent {
   render() {
     return (
       <div>
-        <object id={ID}/>
+        <div id={ID}/>
       </div>
     )
   }
