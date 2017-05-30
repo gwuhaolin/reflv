@@ -8,9 +8,8 @@ import { RTMP } from './rtmp';
 import { FlvSupport } from '../support';
 import '../index.scss';
 
+export const HOST = process.env.NODE_ENV === 'production' ? 'wuhaolin.cn' : 'localhost';
 const LS_KEY = 'reflv-live-state';
-export const HOST = 'wuhaolin.cn';
-// export const HOST = 'localhost';
 
 class ROOT extends PureComponent {
 
