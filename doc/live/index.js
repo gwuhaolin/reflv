@@ -9,8 +9,8 @@ import { FlvSupport } from '../support';
 import '../index.scss';
 
 const LS_KEY = 'reflv-live-state';
-// export const HOST = 'wuhaolin.cn';
-export const HOST = 'localhost';
+export const HOST = 'wuhaolin.cn';
+// export const HOST = 'localhost';
 
 class ROOT extends PureComponent {
 
