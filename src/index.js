@@ -34,19 +34,26 @@ export class Reflv extends Component {
   }
 
   initFlv = ($video) => {
-    const { url, type, isLive, cors } = this.props;
-    if (flvjs.isSupported()) {
-      let flvPlayer = flvjs.createPlayer({
-        type,
-        isLive,
-        url,
-        cors,
-      });
-      flvPlayer.attachMediaElement($video);
-      flvPlayer.load();
-      flvPlayer.play();
-      this.flvPlayer = flvPlayer;
+    if ($video) {
+      const { url, type, isLive, cors } = this.props;
+      if (flvjs.isSupported()) {
+        let flvPlayer = flvjs.createPlayer({
+          type,
+          isLive,
+          url,
+          cors,
+        });
+        flvPlayer.attachMediaElement($video);
+        flvPlayer.load();
+        flvPlayer.play();
+        this.flvPlayer = flvPlayer;
+      }
     }
+  }
+
+  componentWillUnmount() {
+    this.flvPlayer.unload();
+    this.flvPlayer.detachMediaElement();
   }
 
   render() {

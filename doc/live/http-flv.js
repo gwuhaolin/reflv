@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Reflv } from '../../src/index';
 import { HOST } from './index';
 
-export class FLV extends PureComponent {
+export class HttpFlv extends PureComponent {
 
   render() {
     return (

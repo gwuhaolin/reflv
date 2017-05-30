@@ -21,8 +21,12 @@
       word-break: normal;
     }
 
-    .ant-table-content{
+    .ant-table-content {
       overflow-x: scroll;
     }
+  }
+
+  .ant-switch {
+    margin-bottom: 10px;
   }
 }

@@ -81,6 +81,7 @@ export class FlvSupport extends PureComponent {
       <div style={{ paddingBottom: '20px' }}>
         <h3>Supported flv.js feature list for your browser</h3>
         <Table size="small" pagination={false} dataSource={dataSource} columns={columns}/>
+        <h4>live stream serve on <a href="https://github.com/gwuhaolin/livego" target="_blank">livego</a></h4>
       </div>
     );
   }

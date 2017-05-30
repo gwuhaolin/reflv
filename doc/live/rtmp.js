@@ -3,6 +3,8 @@ import swfobject from 'swfobject';
 import player from './player.swf';
 import { HOST } from './index';
 
+const ID = 'rtmp-player';
+
 export class RTMP extends PureComponent {
 
   componentDidMount() {
@@ -19,12 +21,18 @@ export class RTMP extends PureComponent {
       quality: 'high',
       allowscriptaccess: 'sameDomain',
     };
-    swfobject.embedSWF(player, 'rtmp-player', "968", "549", swfVersionStr, xiSwfUrlStr, soFlashVars, params);
+    swfobject.embedSWF(player, ID, "968", "549", swfVersionStr, xiSwfUrlStr, soFlashVars, params);
+  }
+
+  componentWillUnmount() {
+    swfobject.removeSWF(ID);
   }
 
   render() {
     return (
-      <div id="rtmp-player"/>
+      <div>
+        <object id={ID}/>
+      </div>
     )
   }
 }
