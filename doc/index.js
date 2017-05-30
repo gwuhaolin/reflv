@@ -19,7 +19,6 @@ const ROOT = (
       <Basic/>
     </ReDemo>
     <FlvSupport/>
-    <a href="/live.html">常见直播方案延迟与性能对比</a>
   </div>
 )
 
