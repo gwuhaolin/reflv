@@ -10,6 +10,7 @@ import '../index.scss';
 
 const LS_KEY = 'reflv-live-state';
 export const HOST = 'wuhaolin.cn';
+
 // export const HOST = 'localhost';
 
 class ROOT extends PureComponent {
@@ -71,6 +72,13 @@ class ROOT extends PureComponent {
           }}/>
           {hls ? <HLS/> : null}
         </ReDemo>
+
+        <div>
+          <h3>使用说明</h3>
+          <p>推流后才可以看到视频</p>
+          <p>使用<code>ffmpeg -re -i demo.flv -c copy -f flv rtmp://wuhaolin.cn/live/movie</code>推流播放demo.flv</p>
+          <p>使用<code>ffmpeg -f avfoundation -i "0" -vcodec h264 -acodec aac -f flv rtmp://wuhaolin.cn/live/movie</code>推流播放你电脑的摄像头</p>
+        </div>
 
         <FlvSupport/>
       </div>
