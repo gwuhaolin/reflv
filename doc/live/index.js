@@ -8,6 +8,7 @@ import { RTMP } from './rtmp';
 import { FlvSupport } from '../support';
 import '../index.scss';
 
+const LS_KEY = 'reflv-live-state';
 // export const HOST = 'wuhaolin.cn';
 export const HOST = 'localhost';
 
@@ -17,6 +18,16 @@ class ROOT extends PureComponent {
     rtmp: true,
     flv: true,
     hls: true,
+  }
+
+  constructor(props) {
+    super(props);
+    const state = JSON.parse(window.localStorage.getItem(LS_KEY) || '{}');
+    Object.assign(this.state, state);
+  }
+
+  componentDidUpdate() {
+    window.localStorage.setItem(LS_KEY, JSON.stringify(this.state));
   }
 
   render() {
