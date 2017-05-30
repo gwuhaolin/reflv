@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { render } from 'react-dom';
 import ReDemo from 'redemo';
-import { Switch } from 'antd';
+import { Input, Switch } from 'antd';
 import { HttpFlv } from './http-flv';
 import { HLS } from './hls';
 import { RTMP } from './rtmp';
@@ -9,13 +9,13 @@ import { FlvSupport } from '../support';
 import '../index.scss';
 
 const LS_KEY = 'reflv-live-state';
-export const HOST = 'wuhaolin.cn';
-
-// export const HOST = 'localhost';
+// export const HOST = 'wuhaolin.cn';
+export const HOST = 'localhost';
 
 class ROOT extends PureComponent {
 
   state = {
+    id: 'reflv',
     rtmp: true,
     flv: true,
     hls: true,
@@ -32,10 +32,28 @@ class ROOT extends PureComponent {
   }
 
   render() {
-    const { rtmp, flv, hls } = this.state;
+    const { id, rtmp, flv, hls } = this.state;
     return (
       <div className="reflv-wrap">
         <h1>常见直播方案延迟与性能对比</h1>
+
+        <div>
+          <h3>推流说明</h3>
+          <p>推流后才可以看到视频</p>
+          <Input addonBefore="房间ID" defaultValue={id} onPressEnter={event => {
+            const id = event.target.value;
+            this.setState({ id }, () => {
+              window.location.reload();
+            })
+          }}/>
+          <p>使用<code>{`ffmpeg -re -i demo.flv -c copy -f flv rtmp://wuhaolin.cn/live/${id}`}</code>推流播放demo.flv</p>
+          <p>使用
+            <code>
+              {`ffmpeg -f avfoundation -i "0" -vcodec h264 -acodec aac -f flv rtmp://wuhaolin.cn/live/${id}`}
+            </code>
+            推流播放你电脑的摄像头
+          </p>
+        </div>
 
         <ReDemo doc={`
         - 传输协议 RTMP
@@ -46,7 +64,7 @@ class ROOT extends PureComponent {
               rtmp: checked
             })
           }}/>
-          {rtmp ? <RTMP/> : null}
+          {rtmp ? <RTMP id={id}/> : null}
         </ReDemo>
 
         <ReDemo doc={`
@@ -58,7 +76,7 @@ class ROOT extends PureComponent {
               flv: checked
             })
           }}/>
-          {flv ? <HttpFlv/> : null}
+          {flv ? <HttpFlv id={id}/> : null}
         </ReDemo>
 
         <ReDemo doc={`
@@ -70,15 +88,8 @@ class ROOT extends PureComponent {
               hls: checked
             })
           }}/>
-          {hls ? <HLS/> : null}
+          {hls ? <HLS id={id}/> : null}
         </ReDemo>
-
-        <div>
-          <h3>使用说明</h3>
-          <p>推流后才可以看到视频</p>
-          <p>使用<code>ffmpeg -re -i demo.flv -c copy -f flv rtmp://wuhaolin.cn/live/movie</code>推流播放demo.flv</p>
-          <p>使用<code>ffmpeg -f avfoundation -i "0" -vcodec h264 -acodec aac -f flv rtmp://wuhaolin.cn/live/movie</code>推流播放你电脑的摄像头</p>
-        </div>
 
         <FlvSupport/>
       </div>

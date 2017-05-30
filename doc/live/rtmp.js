@@ -9,14 +9,14 @@ export class RTMP extends PureComponent {
 
   componentDidMount() {
     const soFlashVars = {
-      src: `rtmp://${HOST}:1935/live/movie`,
+      src: `rtmp://${HOST}:1935/live/${this.props.id}`,
       streamType: 'live',
       autoPlay: "true",
       controlBarAutoHide: "true",
       controlBarPosition: "bottom"
     };
     const swfVersionStr = "10.3.0";
-    const xiSwfUrlStr = "swfs/playerProductInstall.swf";
+    const xiSwfUrlStr = "playerProductInstall.swf";
     const params = {
       quality: 'high',
       allowscriptaccess: 'sameDomain',
