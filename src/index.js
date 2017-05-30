@@ -52,8 +52,10 @@ export class Reflv extends Component {
   }
 
   componentWillUnmount() {
-    this.flvPlayer.unload();
-    this.flvPlayer.detachMediaElement();
+    if (this.flvPlayer) {
+      this.flvPlayer.unload();
+      this.flvPlayer.detachMediaElement();
+    }
   }
 
   render() {
