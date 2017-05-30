@@ -45,6 +45,7 @@ module.exports = {
   },
   entry: {
     doc: './doc/index.js',
+    live: './doc/live/index',
   },
   plugins: [
     new DefinePlugin({
@@ -70,7 +71,13 @@ module.exports = {
     }),
     new WebPlugin({
       template: './doc/template.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      requires: ['doc'],
+    }),
+    new WebPlugin({
+      template: './doc/template.html',
+      filename: 'live.html',
+      requires: ['live'],
     }),
     new EndWebpackPlugin(() => {
       ghpages.publish(outputPath, { dotfiles: true }, (err) => {
