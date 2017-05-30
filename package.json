@@ -1,6 +1,15 @@
 {
   "name": "play-flv",
   "version": "0.0.4",
+  "description": "react component wrap flv.js",
+  "keywords": [
+    "react",
+    "flv",
+    "flv.js",
+    "livestream",
+    "flash"
+  ],
+  "author": "gwuhaolin",
   "scripts": {
     "dev": "webpack-dev-server --open",
     "doc:pub": "NODE_ENV=production webpack --config webpack-dist.config.js && rm -rf .doc",
