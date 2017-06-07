@@ -5,44 +5,74 @@ import flvjs from 'flv.js';
 /**
  * react component wrap flv.js
  */
-export class Reflv extends Component {
+export default class Reflv extends Component {
 
   static propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
     /**
-     * Indicates media URL, can be starts with 'https(s)' or 'ws(s)' (WebSocket)
+     * media URL, can be starts with 'https(s)' or 'ws(s)' (WebSocket)
      */
     url: PropTypes.string,
     /**
-     * Indicates media type, 'flv' or 'mp4'
+     * media type, 'flv' or 'mp4'
      */
     type: PropTypes.oneOf(['flv', 'mp4']).isRequired,
     /**
-     * Indicates whether the data source is a **live stream**
+     * whether the data source is a **live stream**
      */
     isLive: PropTypes.bool,
     /**
-     * Indicates whether to enable CORS for http fetching
+     * whether to enable CORS for http fetching
      */
     cors: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    isLive: false,
-    cors: false,
+    /**
+     * whether to do http fetching with cookies
+     */
+    withCredentials: PropTypes.bool,
+    /**
+     * whether the stream has audio track
+     */
+    hasAudio: PropTypes.bool,
+    /**
+     * whether the stream has video track
+     */
+    hasVideo: PropTypes.bool,
+    /**
+     * total media duration, in milliseconds
+     */
+    duration: PropTypes.bool,
+    /**
+     * total file size of media file, in bytes
+     */
+    filesize: PropTypes.number,
+    /**
+     * Optional field for multipart playback, see MediaSegment
+     */
+    segments: PropTypes.arrayOf(PropTypes.shape({
+      /**
+       * indicates segment duration in milliseconds
+       */
+      duration: PropTypes.number.isRequired,
+      /**
+       * indicates segment file size in bytes
+       */
+      filesize: PropTypes.number,
+      /**
+       * indicates segment file URL
+       */
+      url: PropTypes.string.isRequired,
+    })),
+    /**
+     * @see https://github.com/Bilibili/flv.js/blob/master/docs/api.md#config
+     */
+    config: PropTypes.object,
   }
 
   initFlv = ($video) => {
     if ($video) {
-      const { url, type, isLive, cors } = this.props;
       if (flvjs.isSupported()) {
-        let flvPlayer = flvjs.createPlayer({
-          type,
-          isLive,
-          url,
-          cors,
-        });
+        let flvPlayer = flvjs.createPlayer({ ...this.props }, this.props.config);
         flvPlayer.attachMediaElement($video);
         flvPlayer.load();
         flvPlayer.play();

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Reflv } from '../../src/index';
+import Reflv from '../../src/index';
 import { HOST } from './index';
 
 export class HttpFlv extends PureComponent {
@@ -11,6 +11,11 @@ export class HttpFlv extends PureComponent {
         type="flv"
         isLive
         cors
+        config={{
+          enableWorker: true,
+          enableStashBuffer: false,
+          stashInitialSize: 128,
+        }}
       />
     )
   }
