@@ -17,7 +17,7 @@ module.exports = {
     // 加快搜索速度
     modules: [path.resolve(__dirname, 'node_modules')],
     // es tree-shaking
-    mainFields: ['jsnext:main', 'browser', 'main'],
+    mainFields: ['browser', 'main'],
   },
   module: {
     rules: [
