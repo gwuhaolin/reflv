@@ -1,6 +1,6 @@
 {
-  "name": "play-flv",
-  "version": "0.0.6",
+  "name": "reflv",
+  "version": "0.0.1",
   "description": "react component wrap flv.js",
   "keywords": [
     "react",
