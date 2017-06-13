@@ -15,9 +15,9 @@ class ROOT extends PureComponent {
 
   state = {
     id: 'reflv',
-    rtmp: true,
     flv: true,
-    hls: true,
+    rtmp: false,
+    hls: false,
   }
 
   constructor(props) {
@@ -55,18 +55,6 @@ class ROOT extends PureComponent {
         </div>
 
         <ReDemo doc={`
-        - 传输协议 RTMP
-        - 播放器 Flash
-        `}>
-          <Switch checked={rtmp} onChange={(checked) => {
-            this.setState({
-              rtmp: checked
-            })
-          }}/>
-          {rtmp ? <RTMP id={id}/> : null}
-        </ReDemo>
-
-        <ReDemo doc={`
         - 传输协议 HTTP-FLV
         - 播放器 flv.js
         `}>
@@ -76,6 +64,18 @@ class ROOT extends PureComponent {
             })
           }}/>
           {flv ? <HttpFlv id={id}/> : null}
+        </ReDemo>
+
+        <ReDemo doc={`
+        - 传输协议 RTMP
+        - 播放器 Flash
+        `}>
+          <Switch checked={rtmp} onChange={(checked) => {
+            this.setState({
+              rtmp: checked
+            })
+          }}/>
+          {rtmp ? <RTMP id={id}/> : null}
         </ReDemo>
 
         <ReDemo doc={`
