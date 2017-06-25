@@ -30,6 +30,11 @@ class ROOT extends PureComponent {
     window.localStorage.setItem(LS_KEY, JSON.stringify(this.state));
   }
 
+  componentDidMount() {
+    // this is for chrome-render https://github.com/gwuhaolin/chrome-render unit test
+    window.chromeRenderReady && window.chromeRenderReady();
+  }
+
   render() {
     const { id, rtmp, flv, hls } = this.state;
     return (
