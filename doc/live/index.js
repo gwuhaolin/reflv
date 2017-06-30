@@ -32,7 +32,7 @@ class ROOT extends PureComponent {
 
   componentDidMount() {
     // this is for chrome-render https://github.com/gwuhaolin/chrome-render unit test
-    window.chromeRenderReady && window.chromeRenderReady();
+    window.isPageReady = 1;
   }
 
   render() {
