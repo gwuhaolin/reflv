@@ -93,6 +93,7 @@ export default class Reflv extends Component {
     return (
       <video
         className={className}
+        controls={true}
         style={Object.assign({
           width: '100%',
         }, style)}
