@@ -45,6 +45,6 @@
     "swfobject": "^2.2.1",
     "web-webpack-plugin": "^1.6.2",
     "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.0"
+    "webpack-dev-server": "^3.9.0"
   }
 }
