@@ -35,7 +35,7 @@
     "end-webpack-plugin": "^1.0.0",
     "file-loader": "^0.11.2",
     "gh-pages": "^1.0.0",
-    "node-sass": "4.5.3",
+    "node-sass": "4.14.1",
     "raw-loader": "^0.5.1",
     "react-docgen": "^2.15.0",
     "react-dom": "^15.5.4",
